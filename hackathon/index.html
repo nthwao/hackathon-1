@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Typing animation styling */
+        .header-text .typing {
+            display: inline-block;
+            border-right: 2px solid #fff;
+            font-size: 1.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+
+        /* Social media icon styling */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            font-size: 2em; /* Increase size of icons */
+            color: #444; /* Default color */
+            transition: color 0.3s, transform 0.3s; /* Add hover effect */
+        }
+
+        .social-icons a:hover {
+            color: #0077b5; /* Change to specific colors if preferred */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
+        .social-icons i {
+            display: inline-block;
+        }
+
+        /* Contact form styling */
+        .contact-right form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-right input, .contact-right textarea {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .contact-right input:focus, .contact-right textarea:focus {
+            border-color: #0077b5; /* Change focus color */
+        }
+
+        .contact-right button {
+            padding: 10px;
+            border: none;
+            background-color: #0077b5;
+            color: #fff;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .contact-right button:hover {
+            background-color: #005f9e;
+            transform: translateY(-2px);
+        }
+
+        .contact-right form::before {
+            content: 'Get in Touch!';
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #444;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class="logo">MIKE<span><i>NTHWAO</i></span></h1>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="images/new cv.pdf" download>Download CV</a></li>
+                    <i class="fas fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p class="web">WEB DEVELOPER</p>
+                <h1>Hi, I'm <span>Michael</span><br>Nthwao from Kenya</h1>
+
+                <p class="typing"></p> <!-- Typing effect text -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col1">
+                    <img src="images/IMG-20240711-WA0006.jpg" alt="Michael Nthwao">
+                </div>
+                <div class="about-col2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a passionate web developer with skills in HTML, CSS, and JavaScript, focusing on both frontend and backend development.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML</span><br>Structuring web content</li>
+                            <li><span>CSS</span><br>Styling web pages</li>
+                            <li><span>JavaScript</span><br>Adding interactivity</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022-current</span><br>Software Development at KCA University</li>
+                            <li><span>2019-2021</span><br>Junior Developer at Microsoft Kenya</li>
+                            <li><span>2017-2019</span><br>Developed a School Management System</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2008-2016</span><br>Kiambani Primary School</li>
+                            <li><span>2017-2020</span><br>St. Martin Kathonzweni School</li>
+                            <li><span>2022-2024</span><br>Diploma in IT at KCA University</li>
+                            <li><span>Current</span><br>Software Engineering at PLP Academy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-lists">
+                <div class="service" style="background-image: url('images/html.jpg');">
+                    <h2></h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
+                    <p>Structuring content with semantic, accessible HTML code.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="service" style="background-image: url('images/css.jpg');">
+                    <h2></h2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo">
+                    <p>Designing and styling websites to create visually appealing layouts.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="service" style="background-image: url('images/it-support.jpg');">
+                    <h2>IT Support</h2>
+                    <p>Providing technical assistance and support for IT-related issues.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>Email: nthwaomike@gmail.com</p>
+                    <p>Phone: +254799716791</p>
+                    <div class="social-icons">
+                        <a href="https://linkedin.com/michael nthwa" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/nthwao" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/michael nthwao" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Tabs and Typing Animation -->
+    <script>
+        // Function to switch tabs
+        function opentab(tabname) {
+            let tablinks = document.getElementsByClassName("tab-links");
+            let tabcontents = document.getElementsByClassName("tab-contents");
+
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // Typing effect for header text
+        const typingEffect = (element, text, delay = 150) => {
+            let i = 0;
+            setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                }
+            }, delay);
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            typingEffect(document.querySelector(".typing"), "Frontend Developer | IT Support Specialist");
+        });
+
+        
+    </script>
+<script>
+    //sidemenu script
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    }
+</script>
+
+
+    
+</body>
+</html>
